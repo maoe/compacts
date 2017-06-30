@@ -1,0 +1,43 @@
+name: compacts
+version: 0.0.0
+synopsis: Compact data structures
+-- description:
+license: BSD3
+license-file: LICENSE
+author: Mitsutoshi Aoe
+maintainer: maoe@foldr.in
+copyright: Copyright (C) 2017 Mitsutoshi Aoe
+category: Data
+build-type: Custom
+extra-source-files: CHANGELOG.md
+cabal-version: >= 1.24
+
+custom-setup
+ setup-depends:
+    base >= 4 && < 5
+  , Cabal
+  , cabal-doctest >= 1 && < 1.1
+
+library
+  exposed-modules:
+    Data.BitVector
+  other-modules:
+    Data.Bits.Reverse
+  build-depends:
+      base >= 4.9 && < 4.11
+    , bytestring
+    , ghc-prim
+    , primitive
+  ghc-options: -Wall
+  hs-source-dirs: src
+  default-language: Haskell2010
+
+test-suite doctests
+  type: exitcode-stdio-1.0
+  main-is: doctests.hs
+  build-depends:
+      base
+    , doctest >= 0.11.1 && < 0.12
+  ghc-options: -Wall -threaded
+  hs-source-dirs: tests
+  default-language: Haskell2010
