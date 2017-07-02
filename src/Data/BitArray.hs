@@ -13,16 +13,12 @@ import Data.Bits
 import Data.Word
 
 import Control.Monad.Primitive
-import Data.ByteString (ByteString)
 import Data.ByteString.Short (ShortByteString)
-import qualified Data.ByteString as B
 import qualified Data.ByteString.Short as BS
 import qualified Data.ByteString.Short.Internal as BS (ShortByteString(SBS))
 import qualified Data.Primitive.ByteArray as P
 
 import Data.Bits.Reverse (reverseWord8)
-
-import Debug.Trace
 
 -- $setup
 -- >>> :set -XBinaryLiterals
