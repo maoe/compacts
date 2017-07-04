@@ -1,6 +1,6 @@
 name: compacts
 version: 0.0.0
-synopsis: Compact data structures
+synopsis: Compact data structures and compression codecs
 -- description:
 license: BSD3
 license-file: LICENSE
@@ -20,13 +20,20 @@ custom-setup
 
 library
   exposed-modules:
+    Codec.Delta
+    Codec.Gamma
+    Codec.Rice
+    Codec.Simple9
+    Codec.Unary
+    Codec.VarByte
     Data.BitArray
     Data.BitVector
-    Data.BitVector.ZeroOrder
     Data.BitVector.HighOrder
+    Data.BitVector.ZeroOrder
     Data.CompactArray
-    Data.CompactArray.Sampled
     Data.CompactArray.Dense
+    Data.CompactArray.Sampled
+    Data.SubWord
   other-modules:
     Data.Bits.Reverse
   build-depends:
@@ -47,4 +54,15 @@ test-suite doctests
     , doctest >= 0.11.1 && < 0.12
   ghc-options: -Wall -threaded
   hs-source-dirs: tests
+  default-language: Haskell2010
+
+benchmark bench-compact-arrays
+  type: exitcode-stdio-1.0
+  main-is: bench-compact-arrays.hs
+  build-depends:
+      base
+    , compacts
+    , criterion
+  ghc-options: -Wall
+  hs-source-dirs: benchmarks
   default-language: Haskell2010
