@@ -27,6 +27,7 @@ library
     Codec.Unary
     Codec.VarByte
     Data.BitArray
+    Data.BitArray.Builder
     Data.BitVector
     Data.BitVector.HighOrder
     Data.BitVector.ZeroOrder
