@@ -52,7 +52,7 @@ test-suite doctests
   main-is: doctests.hs
   build-depends:
       base
-    , doctest >= 0.11.1 && < 0.12
+    , doctest >= 0.11.1 && < 0.14
   ghc-options: -Wall -threaded
   hs-source-dirs: tests
   other-modules: Build_doctests
